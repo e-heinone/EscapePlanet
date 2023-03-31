@@ -57,12 +57,12 @@ public class PlayerController : MonoBehaviour
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
 
         MyInput();
-
+        SpeedControl();
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
         if (grounded)
             rb.drag = groundDrag;
-        else rb.drag = 0f;
+        else rb.drag = 0;
     }
 
     private void FixedUpdate()
@@ -103,12 +103,23 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        rb.velocity = new Vector3(rb.velocity.x / 2, 0f, rb.velocity.z / 2);
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
     private void ResetJump()
     {
         readyToJump = true;
+    }
+
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if(flatVel.magnitude > moveSpeed)
+        {
+            Vector3 limitedVel = flatVel.normalized * moveSpeed;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
     }
 }

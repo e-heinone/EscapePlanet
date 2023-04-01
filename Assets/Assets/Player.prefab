@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2396762740484255858}
   - component: {fileID: 2396762740484255859}
   - component: {fileID: 2396762740484255856}
+  - component: {fileID: 2032792373255546705}
   - component: {fileID: 7162533185463076659}
   - component: {fileID: 5086308802719575163}
   - component: {fileID: -3675573926417954577}
@@ -121,6 +122,20 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &2032792373255546705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2396762740484255857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c711214e523687a41a9ed3ebf496720c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 0}
+  outlineMaterial: {fileID: 0}
 --- !u!114 &7162533185463076659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae08401759039a94c8890b9894dc15cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  os: {fileID: 2032792373255546705}
   ghostTurret: {fileID: 2397482733454621684}
 --- !u!114 &5086308802719575163
 MonoBehaviour:
@@ -171,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 30
+  Height: 0
 --- !u!1 &2396762740962793598
 GameObject:
   m_ObjectHideFlags: 0

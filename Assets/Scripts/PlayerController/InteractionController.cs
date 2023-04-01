@@ -5,6 +5,8 @@ using UnityEngine;
 public class InteractionController : MonoBehaviour
 {
     private GameObject objectInView;
+
+    public OutlineScript2 os;
     private bool isInBuildMode = false;
 
     [SerializeField]
@@ -51,9 +53,31 @@ public class InteractionController : MonoBehaviour
     }
     private void RaycastObjects()
     {
+        if (objectInView != null)
+        {
+            if (objectInView.GetComponent<OutlineScript2>() != null)
+            {
+                objectInView.GetComponent<OutlineScript2>().OutOfInteractRange();
+
+            }
+        }
         Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit);
         if (hit.distance < 2f && hit.collider != null)
         {
+            if(objectInView!= null)
+            {
+                if (objectInView.GetComponent<OutlineScript2>() != null)
+                {
+                    objectInView.GetComponent<OutlineScript2>().OutOfInteractRange();
+
+                }
+            }
+            
+            if (hit.collider.gameObject.GetComponent<OutlineScript2>() != null)
+            {
+                hit.collider.gameObject.GetComponent<OutlineScript2>().InInteractRange();
+
+            }
             objectInView = hit.collider.gameObject;
         }
     }

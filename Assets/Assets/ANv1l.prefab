@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7750773814327115940}
   - component: {fileID: 7750773814327115941}
   - component: {fileID: 7750773814327115937}
+  - component: {fileID: 1201688476651280790}
   m_Layer: 0
   m_Name: ANv1l
   m_TagString: Untagged
@@ -64,7 +65,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4d3ab212a8db43147ad92695fd3a10fb, type: 2}
+  - {fileID: 2100000, guid: 6e831e3a70dfdfb4fabf8bc79687ef40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,6 +115,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 300
   Height: 0
+--- !u!114 &1201688476651280790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7750773814327115942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c711214e523687a41a9ed3ebf496720c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 2100000, guid: 4d3ab212a8db43147ad92695fd3a10fb, type: 2}
+  outlineMaterial: {fileID: 2100000, guid: 6e831e3a70dfdfb4fabf8bc79687ef40, type: 2}
 --- !u!1 &7750773814550995477
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +142,7 @@ GameObject:
   - component: {fileID: 7750773814550995474}
   - component: {fileID: 7750773814550995475}
   - component: {fileID: 7750773814550995472}
+  - component: {fileID: 5248632634452943263}
   m_Layer: 0
   m_Name: PrintedObject
   m_TagString: Untagged
@@ -176,7 +193,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4d3ab212a8db43147ad92695fd3a10fb, type: 2}
+  - {fileID: 2100000, guid: 6e831e3a70dfdfb4fabf8bc79687ef40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -223,3 +241,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 200e42a00e27ce343abb4d6b6878daad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5248632634452943263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7750773814550995477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c711214e523687a41a9ed3ebf496720c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 2100000, guid: 4d3ab212a8db43147ad92695fd3a10fb, type: 2}
+  outlineMaterial: {fileID: 2100000, guid: 6e831e3a70dfdfb4fabf8bc79687ef40, type: 2}

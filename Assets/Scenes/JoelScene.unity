@@ -25,8 +25,8 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubtractiveShadowColor: {r: 0.3260057, g: 0.54786944, b: 0.6226415, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 85cf0b004bc4a654b9e501efcce47902, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.57770085, g: 0.6152049, b: 0.60846514, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 291208117}
   - component: {fileID: 291208116}
   - component: {fileID: 291208120}
+  - component: {fileID: 291208121}
   m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
@@ -237,6 +238,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultMaterial: {fileID: 2100000, guid: 2d76108f95853ff48b81c75a484a977d, type: 2}
   outlineMaterial: {fileID: 2100000, guid: 6e831e3a70dfdfb4fabf8bc79687ef40, type: 2}
+--- !u!114 &291208121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291208115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2360967300ca5f34b9295dc5c4addf66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 0
+  Height: 0
+  moveSpeed: 10
+  chasingRange: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 0
+  walkPoint: {x: 0, y: 0, z: 0}
+  timeBetweenAttacks: 0
+  sightRange: 0
+  attackRange: 0
+  targetInSightRange: 0
+  targetInAttackRange: 0
 --- !u!1 &296552847
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866745353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.95, y: -0.49, z: 0}
+  m_LocalPosition: {x: -1.95, y: -0.743, z: 0}
   m_LocalScale: {x: 6.750191, y: 1.3539919, z: 6.6203437}
   m_ConstrainProportionsScale: 0
   m_Children: []

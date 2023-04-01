@@ -12,7 +12,9 @@ public class GameUI : MonoBehaviour
     public static GameUI gameUI;
     public GameObject AnvilMenu;
 
-    public GameObject TEMPgameObject;
+    public GameObject Tripod;
+
+    public GameObject TurretCanvas, TurretAmmo, TurretName;
     private void Awake()
     {
         gameUI = GetComponent<GameUI>();
@@ -49,7 +51,7 @@ public class GameUI : MonoBehaviour
     {
         if (PlayerEntity.SpentResource(SetupPrice(0, 10, 0)))
         {
-            PrintedObject.Print(TEMPgameObject);
+            PrintedObject.Print(Tripod);
         }
         else
         {
@@ -65,6 +67,12 @@ public class GameUI : MonoBehaviour
         price.Add(Resources.Metal, metal);
         price.Add(Resources.Oil, oil);
         return price;
+    }
+
+    public void SetTurretInfo(Turret turret)
+    {
+        TurretAmmo.GetComponent<TMP_Text>().text = "Ammo " + turret.Ammo + "/" + turret.AmmoCapacity;
+        TurretName.GetComponent<TMP_Text>().text = turret.name;
     }
 }
 

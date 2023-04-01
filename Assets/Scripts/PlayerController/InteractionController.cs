@@ -35,6 +35,7 @@ public class InteractionController : MonoBehaviour
                 isInBuildMode = !isInBuildMode;
                 ghostTurret.SetActive(false); 
                 ghostTurret = null;
+                PlayerEntity.carriedObject = null;
             }
         }
 
@@ -48,6 +49,8 @@ public class InteractionController : MonoBehaviour
                 {
                     ghostTurret.SetActive(true);
                     ghostTurret = Instantiate(PlayerEntity.carriedObject);
+                    Destroy(ghostTurret.GetComponent<Entity>());
+                    
                 }
                 else { ghostTurret.SetActive(false); }
             }
@@ -55,12 +58,23 @@ public class InteractionController : MonoBehaviour
     }
     private void RaycastObjects()
     {
+        
+        //
         if (objectInView != null)
         {
             if (objectInView.GetComponent<OutlineScript2>() != null)
             {
                 objectInView.GetComponent<OutlineScript2>().OutOfInteractRange();
 
+            }
+            //Check turrent condition
+            if (objectInView.GetComponent<Turret>() != null)
+            {
+                GameUI.gameUI.TurretCanvas.SetActive(true);
+                GameUI.gameUI.SetTurretInfo(objectInView.GetComponent<Turret>());
+            } else
+            {
+                GameUI.gameUI.TurretCanvas.SetActive(false);
             }
         }
         Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit);
@@ -81,7 +95,11 @@ public class InteractionController : MonoBehaviour
 
             }
             objectInView = hit.collider.gameObject;
+        } else
+        {
+            GameUI.gameUI.TurretCanvas.SetActive(false);
         }
+        
     }
 
     private void InteractWithObject()

@@ -40,7 +40,9 @@ public class PrintedObject : MonoBehaviour, IInteractable
         //thisGameObject.transform.GetComponent<MeshFilter>().mesh = new Mesh();
         //thisGameObject.transform.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);
         testObject = Instantiate(obj,thisGameObject.transform.position, Quaternion.identity);
+        
         thisGameObject.SetActive(true);
         reference = obj;
+        Destroy(testObject.GetComponent<Entity>());
     }
 }

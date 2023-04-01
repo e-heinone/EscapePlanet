@@ -43,7 +43,7 @@ public class PlayerEntity : Entity
             }
             else
             {
-                WoodAmount -= amount;
+                MetalAmount -= amount;
                 return true;
             }
         }

@@ -12,7 +12,7 @@ public interface ITurret
 
 
 
-public class Turret : Entity
+public class Turret : Entity , IInteractable
 {
 
     public int Ammo, AmmoCapacity;
@@ -20,6 +20,7 @@ public class Turret : Entity
     public int ResourceCapacity;
 
     private GameObject target;
+    public List<GameObject> targets;
     public void AddAmmo()
     {
         if (Ammo < AmmoCapacity)
@@ -44,6 +45,11 @@ public class Turret : Entity
         {
             GameUI.gameUI.ReportToPlayer("Ammo is full!");
         }
+    }
+
+    public void Interaction()
+    {
+        AddAmmo();
     }
 }
 

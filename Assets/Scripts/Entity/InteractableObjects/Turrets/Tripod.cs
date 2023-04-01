@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Tripod : Turret, ITurret
 {
+    public GameObject pistol, sailio;
     public void Shoot()
     {
 
@@ -18,5 +19,11 @@ public class Tripod : Turret, ITurret
     {
         Ammo--;
         
+    }
+
+    private void Update()
+    {
+        pistol.transform.LookAt(GameObject.Find("Player").transform);
+       sailio.transform.LookAt(GameObject.Find("Player").transform);
     }
 }

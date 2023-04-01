@@ -9,6 +9,7 @@ public class InteractionController : MonoBehaviour
     public OutlineScript2 os;
     private bool isInBuildMode = false;
 
+
     [SerializeField]
     private GameObject ghostTurret;
     private void Update()
@@ -33,7 +34,7 @@ public class InteractionController : MonoBehaviour
                 CameraAndMovementController.SwitchMenuState();
                 isInBuildMode = !isInBuildMode;
                 ghostTurret.SetActive(false); 
-                PlayerEntity.carriedObject = null;
+                ghostTurret = null;
             }
         }
 
@@ -46,6 +47,7 @@ public class InteractionController : MonoBehaviour
                 if (isInBuildMode)
                 {
                     ghostTurret.SetActive(true);
+                    ghostTurret = Instantiate(PlayerEntity.carriedObject);
                 }
                 else { ghostTurret.SetActive(false); }
             }
@@ -100,7 +102,7 @@ public class InteractionController : MonoBehaviour
         Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit);
         if(hit.distance < 10 && hit.collider != null)
         {
-            ghostTurret.transform.position = hit.point + new Vector3(0,0.5f,0);
+            ghostTurret.transform.position = hit.point + new Vector3(0,PlayerEntity.carriedObject.GetComponent<Entity>().Height/2,0);
         }
         ghostTurret.transform.rotation = Quaternion.identity;
 

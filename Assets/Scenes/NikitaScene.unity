@@ -1192,7 +1192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7750773814327115938, guid: a1cccd6fea69a0443b105ede306d8fa0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 165.4
+      value: 165.55
       objectReference: {fileID: 0}
     - target: {fileID: 7750773814327115938, guid: a1cccd6fea69a0443b105ede306d8fa0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1229,6 +1229,10 @@ PrefabInstance:
     - target: {fileID: 7750773814327115942, guid: a1cccd6fea69a0443b105ede306d8fa0, type: 3}
       propertyPath: m_Name
       value: ANv1l
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750773814550995474, guid: a1cccd6fea69a0443b105ede306d8fa0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1cccd6fea69a0443b105ede306d8fa0, type: 3}
@@ -1360,7 +1364,7 @@ PrefabInstance:
     - target: {fileID: 3416018079179291417, guid: 076f866f958b1f74f940d219524bced1, type: 3}
       propertyPath: TEMPgameObject
       value: 
-      objectReference: {fileID: 454663327}
+      objectReference: {fileID: 1777375051187166582, guid: 3ee526975a4f46542ad1c3287fcd4f39, type: 3}
     - target: {fileID: 3416018079179291418, guid: 076f866f958b1f74f940d219524bced1, type: 3}
       propertyPath: m_Camera
       value: 

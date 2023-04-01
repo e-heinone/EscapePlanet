@@ -11,12 +11,19 @@ public class PlayerEntity : Entity
 
     public static GameObject carriedObject;
 
+    public static GameObject me;
     /// <summary>
     /// Returns false if not enough resources. Changes value only if true.
     /// </summary>
     /// <param name="resource">Enum which defines which resource you are using</param>
     /// <param name="amount">Amount of resource to spent</param>
     /// <returns></returns>
+    /// 
+
+    private void Awake()
+    {
+        me = gameObject;
+    }
     public static bool SpentResource(Resources resource, int amount){
         if(resource == Resources.Wood)
         {

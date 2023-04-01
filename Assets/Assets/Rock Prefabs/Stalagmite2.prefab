@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 207891148}
   - component: {fileID: 207891147}
   - component: {fileID: 207891146}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stalagmite2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,10 +14,12 @@ public interface ITurret
 
 public class Turret : Entity
 {
+
     public int Ammo, AmmoCapacity;
     public Resources resource;
     public int ResourceCapacity;
 
+    private GameObject target;
     public void AddAmmo()
     {
         if (Ammo < AmmoCapacity)

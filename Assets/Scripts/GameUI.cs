@@ -47,7 +47,6 @@ public class GameUI : MonoBehaviour
 
     public void PrintTripod()
     {
-        PrintedObject.Print(TEMPgameObject);
         if (PlayerEntity.SpentResource(SetupPrice(0, 10, 0)))
         {
             PrintedObject.Print(TEMPgameObject);

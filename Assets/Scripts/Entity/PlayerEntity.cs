@@ -11,6 +11,8 @@ public class PlayerEntity : Entity
 
     public static GameObject carriedObject;
 
+    public static int GlobalEnergy = 0;
+
     public static GameObject me;
     /// <summary>
     /// Returns false if not enough resources. Changes value only if true.
@@ -117,4 +119,35 @@ public class PlayerEntity : Entity
     public static int GetWoodAmount() { return WoodAmount; }
 
     public static string GetCarriedObjectName() { if (carriedObject != null) return carriedObject.name; else { return ""; }; }
+
+    private void Update()
+    {
+        if (carriedObject != null)
+        {
+            if (carriedObject.GetComponent<CarryingBin>() != null)
+            {
+                MetalMaxAmount = 30;
+                WoodMaxAmount = 30;
+            }
+            else
+            {
+                MetalMaxAmount = 10;
+                WoodMaxAmount = 10;
+            }
+        }
+        else
+        {
+            MetalMaxAmount = 10;
+            WoodMaxAmount = 10;
+        }
+        
+        if (MetalAmount > MetalMaxAmount)
+        {
+            MetalAmount = MetalMaxAmount;
+        }
+        if (WoodAmount > WoodMaxAmount)
+        {
+            WoodAmount = WoodMaxAmount;
+        }
+    }
 }

@@ -13,6 +13,7 @@ public class Entity : MonoBehaviour
     private float CurrentHealth;
     [SerializeField]
     public float Height;
+    public string Name;
 
     [SerializeField]
     public Dictionary<Resources, int> Price = new Dictionary<Resources, int>();

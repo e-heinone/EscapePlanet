@@ -8,28 +8,37 @@ using TMPro;
 
 public class GameUI : MonoBehaviour
 {
-    public TMP_Text WoodText, MetalText, MessageText, YouAreHolding;
+    public TMP_Text WoodText, MetalText, MessageText, YouAreHolding, GlobalEnergy;
     public static GameUI gameUI;
     public GameObject AnvilMenu;
 
-    public GameObject Tripod, CarryBin;
+    public GameObject Tripod, CarryBin, WoodBurner, Motor;
 
     public GameObject TurretCanvas, TurretAmmo, TurretName;
 
-    public Button binButton;
+    public Button binButton, woodButton, motorButton;
     private void Awake()
     {
         gameUI = GetComponent<GameUI>();
         AnvilMenu.SetActive(false);
         binButton.interactable = false;
+        woodButton.interactable = false;
+        motorButton.interactable = false;
     }
     private void Update()
     { 
         WoodText.text = "Wood: " + PlayerEntity.GetWoodAmount().ToString();
         MetalText.text = "Metal: " + PlayerEntity.GetMetalAmount().ToString();
 
-        YouAreHolding.text = "You are holding: " + PlayerEntity.GetCarriedObjectName();
-
+        if (PlayerEntity.carriedObject!= null)
+        {
+            YouAreHolding.text = "You are holding: " + PlayerEntity.carriedObject.GetComponent<Entity>().Name;
+        } else
+        {
+            YouAreHolding.text = "You are holding: ";
+        }
+        
+        GlobalEnergy.text = "Global energy level: " + PlayerEntity.GlobalEnergy.ToString();
         
     }
 
@@ -56,6 +65,7 @@ public class GameUI : MonoBehaviour
         {
             PrintedObject.Print(Tripod);
             binButton.interactable = true;
+            woodButton.interactable = true;
         }
         else
         {
@@ -67,6 +77,7 @@ public class GameUI : MonoBehaviour
         if (PlayerEntity.SpentResource(SetupPrice(0, 10, 0)))
         {
             PrintedObject.Print(CarryBin);
+            
         }
         else
         {
@@ -74,6 +85,30 @@ public class GameUI : MonoBehaviour
         }
     }
 
+    public void PrintWoodBurner()
+    {
+        if (PlayerEntity.SpentResource(SetupPrice(0, 10, 0)))
+        {
+            PrintedObject.Print(WoodBurner);
+            motorButton.interactable = true;
+        }
+        else
+        {
+            ReportToPlayer("You need more resources!");
+        }
+    }
+
+    public void PrintMotor()
+    {
+        if (PlayerEntity.SpentResource(SetupPrice(0, 15, 0)))
+        {
+            PrintedObject.Print(Motor);
+        }
+        else
+        {
+            ReportToPlayer("You need more resources!");
+        }
+    }
     public Dictionary<Resources,int> SetupPrice(int wood, int metal, int oil)
     {
         Dictionary<Resources, int> price = new Dictionary<Resources, int>();

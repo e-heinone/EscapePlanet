@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 30
   Height: 0.3
-  bin: {fileID: 5036917184858645147}
+  Name: Carrying Bin
 --- !u!65 &1137564643816879234
 BoxCollider:
   m_ObjectHideFlags: 0

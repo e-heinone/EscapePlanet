@@ -41,7 +41,7 @@ public class InteractionController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if(CameraAndMovementController.grounded && PlayerEntity.carriedObject != null)
+            if (CameraAndMovementController.grounded && PlayerEntity.carriedObject != null)
             {
                 CameraAndMovementController.SwitchMenuState();
                 isInBuildMode = !isInBuildMode;
@@ -49,8 +49,9 @@ public class InteractionController : MonoBehaviour
                 {
                     ghostTurret.SetActive(true);
                     ghostTurret = Instantiate(PlayerEntity.carriedObject);
+
                     Destroy(ghostTurret.GetComponent<Entity>());
-                    
+                    Destroy(ghostTurret.GetComponent<Collider>());
                 }
                 else { ghostTurret.SetActive(false); }
             }
@@ -117,7 +118,8 @@ public class InteractionController : MonoBehaviour
 
     private void ControlGhostTurret()
     {
-        Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit);
+        int layer = 6;
+        Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, layer );
         if(hit.distance < 10 && hit.collider != null)
         {
             ghostTurret.transform.position = hit.point + new Vector3(0,PlayerEntity.carriedObject.GetComponent<Entity>().Height/2,0);

@@ -34,7 +34,7 @@ public class InteractionController : MonoBehaviour
                 CameraAndMovementController.SwitchMenuState();
                 isInBuildMode = !isInBuildMode;
                 ghostTurret.SetActive(false); 
-                ghostTurret = null;
+                ghostTurret = new GameObject();
                 PlayerEntity.carriedObject = null;
             }
         }

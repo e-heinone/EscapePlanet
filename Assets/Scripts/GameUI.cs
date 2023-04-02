@@ -12,13 +12,16 @@ public class GameUI : MonoBehaviour
     public static GameUI gameUI;
     public GameObject AnvilMenu;
 
-    public GameObject Tripod;
+    public GameObject Tripod, CarryBin;
 
     public GameObject TurretCanvas, TurretAmmo, TurretName;
+
+    public Button binButton;
     private void Awake()
     {
         gameUI = GetComponent<GameUI>();
         AnvilMenu.SetActive(false);
+        binButton.interactable = false;
     }
     private void Update()
     { 
@@ -52,13 +55,24 @@ public class GameUI : MonoBehaviour
         if (PlayerEntity.SpentResource(SetupPrice(0, 10, 0)))
         {
             PrintedObject.Print(Tripod);
+            binButton.interactable = true;
         }
         else
         {
             ReportToPlayer("You need more resources!");
         }
     }
-    
+    public void PrintCarryingBin()
+    {
+        if (PlayerEntity.SpentResource(SetupPrice(0, 10, 0)))
+        {
+            PrintedObject.Print(CarryBin);
+        }
+        else
+        {
+            ReportToPlayer("You need more resources!");
+        }
+    }
 
     public Dictionary<Resources,int> SetupPrice(int wood, int metal, int oil)
     {

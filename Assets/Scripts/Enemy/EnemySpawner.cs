@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     public ChooseRandomRayFromSpace rayFromSpace;
 
     private int numberOfEnemiesSpawned;
-    private float timeUntilSpawning = 10f;
+    private float timeUntilSpawning = 100000f;
 
     public GameObject[] enemyTypes;
 
@@ -37,7 +37,8 @@ public class EnemySpawner : MonoBehaviour
 
         for (int i = 0; i < rnd; i++)
         {
-            Instantiate(enemyType, rayFromSpace.targetLocation, Quaternion.identity);
+            Instantiate(enemyType, rayFromSpace.targetLocation + new Vector3(0, 0 + 5f, 0), Quaternion.identity);
+            Debug.Log("Spawned: " + enemyType + " at " + rayFromSpace.targetLocation);
         }
     }
 }

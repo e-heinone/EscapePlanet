@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8745353882487951593, guid: e3aeb933409d8aa4789233a457612acf, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 84dba83faa2fe044486250af900fa2e5, type: 2}
     - target: {fileID: -8679921383154817045, guid: e3aeb933409d8aa4789233a457612acf, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -178,6 +182,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IronNode 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8006958694806783865, guid: e3aeb933409d8aa4789233a457612acf, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52ac32318a1dd714caa19b252e6d557f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3aeb933409d8aa4789233a457612acf, type: 3}
 --- !u!1001 &72522446
@@ -2209,6 +2217,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7601226680800833775, guid: 3d9f5998bef18784eaa0414c5b2fc5d0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52ac32318a1dd714caa19b252e6d557f, type: 2}
+    - target: {fileID: -5215299815803115452, guid: 3d9f5998bef18784eaa0414c5b2fc5d0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b888aa3fd858c704e9cfd58b770a7000, type: 2}
+    - target: {fileID: -1497557317815809635, guid: 3d9f5998bef18784eaa0414c5b2fc5d0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52ac32318a1dd714caa19b252e6d557f, type: 2}
+    - target: {fileID: -1469973275494283117, guid: 3d9f5998bef18784eaa0414c5b2fc5d0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b888aa3fd858c704e9cfd58b770a7000, type: 2}
     - target: {fileID: 919132149155446097, guid: 3d9f5998bef18784eaa0414c5b2fc5d0, type: 3}
       propertyPath: m_Name
       value: MachineGun
